@@ -16,6 +16,7 @@ export async function configure(aurelia) {
     .feature('features/utils')
     .feature('features/elements/assign')
     .feature('features/elements/buttons')
+    .feature('features/value-converters')
     .feature('features/elements/date-time-picker');
 
     ViewLocator.prototype.convertOriginToViewUrl = function (origin) {

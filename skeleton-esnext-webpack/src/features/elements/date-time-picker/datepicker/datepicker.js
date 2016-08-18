@@ -1,8 +1,11 @@
 import {inject, customElement, bindable, bindingMode} from 'aurelia-framework';
 import $ from 'jquery';
-import 'Eonasdan/bootstrap-datetimepicker';
+import 'eonasdan-bootstrap-datetimepicker';
 import moment from 'moment';
-import {customElementHelper} from 'utils';
+import {customElementHelper} from 'features/utils/index';
+
+import 'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css';
+import '../style.css';
 
 @customElement('datepicker')
 @inject(Element)
