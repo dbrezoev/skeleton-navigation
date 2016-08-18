@@ -61,6 +61,11 @@ const baseConfig = {
     'aurelia-bootstrap': coreBundles.bootstrap,
     'aurelia': coreBundles.aurelia.filter(pkg => coreBundles.bootstrap.indexOf(pkg) === -1)
   },
+  module: {
+  loaders: [
+    { test: /\.jade$/, loader: 'html!jade-html' }
+  ]
+},
   output: {
     path: outDir,
   }

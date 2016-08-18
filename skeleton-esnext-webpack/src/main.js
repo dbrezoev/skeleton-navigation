@@ -6,12 +6,19 @@ import 'bootstrap';
 
 // comment out if you don't want a Promise polyfill (remove also from webpack.common.js)
 import * as Bluebird from 'bluebird';
+import {ViewLocator} from 'aurelia-framework';
 Bluebird.config({ warnings: false });
 
 export async function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging();
+
+    ViewLocator.prototype.convertOriginToViewUrl = function (origin) {
+      let moduleId = origin.moduleId
+      let id = (moduleId.endsWith('.js') || moduleId.endsWith('.ts')) ? moduleId.substring(0, moduleId.length - 3) : moduleId
+      return id + '.jade'
+    }
 
   // Uncomment the line below to enable animation.
   // aurelia.use.plugin('aurelia-animator-css');

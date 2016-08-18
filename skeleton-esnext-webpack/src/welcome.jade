@@ -1,0 +1,15 @@
+template
+      section.au-animate
+        h2 ${heading}
+        h1 JADE
+        form(role='form', submit.delegate='submit()')
+          .form-group
+            label(for='fn') First Name JADE
+            input#fn.form-control(type='text', value.bind='firstName', placeholder='first name')
+          .form-group
+            label(for='ln') Last Name
+            input#ln.form-control(type='text', value.bind='lastName', placeholder='last name')
+          .form-group
+            label Full Name
+            p.help-block ${fullName | upper}
+          button.btn.btn-default(type='submit') Submit
