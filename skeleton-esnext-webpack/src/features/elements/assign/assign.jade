@@ -1,0 +1,30 @@
+template
+  //require(from="./styles/assign.css")
+
+  grid.col-lg-5(data.bind="leftItems",
+    height="auto",
+    selection="single",
+    select-grid-row.trigger="select($event.detail.$item)",
+    deselect-grid-row.trigger="deselect($event.detail.$item)",
+    selected-item.bind="_selectedItem",
+    style="overflow-y: hidden")
+    grid-row
+      grid-col(heading.bind="leftHeading", nosort)
+        span ${$item.name}
+
+  div.col-lg-2.text-center
+    button.assign-button.btn.fa.fa-angle-double-right(click.trigger="moveAllRight()", disabled.bind="leftItems.length === 0")
+    button.assign-button.btn.fa.fa-angle-right(click.trigger="moveRight()", disabled.bind="moveRightDisabled")
+    button.assign-button.btn.fa.fa-angle-left(click.trigger="moveLeft()", disabled.bind="moveLeftDisabled")
+    button.assign-button.btn.fa.fa-angle-double-left(click.trigger="moveAllLeft()", disabled.bind="rightItems.length === 0")
+
+  grid.col-lg-5(data.bind="rightItems",
+    height="auto",
+    selection="single",
+    select-grid-row.trigger="select($event.detail.$item)",
+    deselect-grid-row.trigger="deselect($event.detail.$item)",
+    selected-item.bind="_selectedItem",
+    style="overflow-y: hidden")
+    grid-row
+      grid-col(heading.bind="rightHeading", nosort)
+        span ${$item.name}

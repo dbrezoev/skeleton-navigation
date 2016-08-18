@@ -13,6 +13,8 @@ export async function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
+    .feature('features/utils')
+    .feature('features/elements/assign')
     .feature('features/elements/buttons');
 
     ViewLocator.prototype.convertOriginToViewUrl = function (origin) {
