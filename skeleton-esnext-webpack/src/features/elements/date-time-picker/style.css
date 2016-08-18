@@ -1,0 +1,7 @@
+.input-group.date .input-group-addon.cursor-readonly{
+  cursor: auto;
+}
+
+.input-group.date .input-group-addon.cursor-disabled{
+  cursor: not-allowed;
+}
