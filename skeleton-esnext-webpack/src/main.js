@@ -12,7 +12,8 @@ Bluebird.config({ warnings: false });
 export async function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
-    .developmentLogging();
+    .developmentLogging()
+    .feature('features/elements/buttons');
 
     ViewLocator.prototype.convertOriginToViewUrl = function (origin) {
       let moduleId = origin.moduleId
