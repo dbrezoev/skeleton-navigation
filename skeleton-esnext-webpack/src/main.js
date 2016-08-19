@@ -13,6 +13,7 @@ export async function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
+    .plugin('aurelia-dialog')
     .plugin('aurelia-animator-css')
     .plugin('aurelia-i18n', (instance) => {
       // adapt options to your needs (see http://i18next.com/pages/doc_init.html)
@@ -28,6 +29,8 @@ export async function configure(aurelia) {
         debug: false
       });
     })
+    // .feature('features/dialog')
+    .feature('features/attributes/popover')
     .feature('features/utils')
     .feature('features/elements/assign')
     .feature('features/elements/buttons')
