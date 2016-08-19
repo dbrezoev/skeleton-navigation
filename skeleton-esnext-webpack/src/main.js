@@ -13,6 +13,7 @@ export async function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
+    .plugin('aurelia-animator-css')
     .plugin('aurelia-i18n', (instance) => {
       // adapt options to your needs (see http://i18next.com/pages/doc_init.html)
       instance.setup({
