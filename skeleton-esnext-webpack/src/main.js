@@ -13,6 +13,20 @@ export async function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
+    .plugin('aurelia-i18n', (instance) => {
+      // adapt options to your needs (see http://i18next.com/pages/doc_init.html)
+      instance.setup({
+        detectFromHeaders: false,
+        lng: 'bg',
+        fallbackLng: 'bg',
+        ns: 'app',
+        resGetPath: 'assets/locales/__lng__/__ns__.json',
+        attributes: ['t', 'i18n'],
+        useCookie: false,
+        getAsync: false,
+        debug: false
+      });
+    })
     .feature('features/utils')
     .feature('features/elements/assign')
     .feature('features/elements/buttons')
